@@ -50,7 +50,7 @@ class UrlAwareParser implements Parsable
             $result = array_merge($result, $extraOpts);
         }
 
-        foreach($this->knownFields as $key) {
+        foreach ($this->knownFields as $key) {
             if (!array_key_exists($key, $result)
                 && isset($this->defaults[$key])) {
                 $result[$key] = $this->defaults[$key];
