@@ -51,3 +51,16 @@ return [
     ],
 ];
 ```
+
+### Tests
+```sh
+composer test
+```
+
+### License
+This library is released under the MIT license.
+
+### More resources
+- [The 12 Factor App](https://www.12factor.net/)
+- [Environment Variables](https://help.ubuntu.com/community/EnvironmentVariables)
+
