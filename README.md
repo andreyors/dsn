@@ -15,6 +15,11 @@ A DSN Parser for 12 factor apps
 
 ### Prerequisites
   - Composer
+  
+### Supported
+- MySQL DSN
+- PostgreSQL DSN
+- Redis DSN
 
 ### Installing
 `composer require andreyors/dsn`
@@ -23,7 +28,26 @@ A DSN Parser for 12 factor apps
 ```php
 <?php
 
-use \AndreyOrs\Dsn;
+if (!isset($_ENV['APP_ENV'])) { // Production must have env vars provided via /etc/environment
+    (new Symfony\Component\Dotenv\Dotenv())
+        ->load(__DIR__ . '/.env');
+}
 
-Dsn::parse(getenv('DATABASE_URL'));
+$dsn = \AndreyOrs\Dsn::parse($_ENV['SYNCAPP_URL']);
+
+return [
+    'migration_dirs' => [
+        'migrations' => __DIR__.'/config/db/migrations',
+    ],
+    'environments' => [
+        'local' => [
+            'adapter' => $dsn['adapter'] ?? '',
+            'host' => $dsn['host'] ?? '',
+            'username' => $dsn['user'] ?? '',
+            'password' => $dsn['pass'] ?? '',
+            'db_name' => $dsn['name'] ?? '',
+            'charset' => 'utf8mb4',
+        ],
+    ],
+];
 ```
