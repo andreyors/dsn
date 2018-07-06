@@ -11,6 +11,13 @@ class UnknownParser implements Parsable
      */
     public function parse($string)
     {
-        return [];
+        return [
+            'adapter' => null,
+            'user' => null,
+            'pass' => null,
+            'host' => null,
+            'port' => null,
+            'name' => null,
+        ];
     }
 }

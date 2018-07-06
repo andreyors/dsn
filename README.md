@@ -20,6 +20,7 @@ A DSN Parser for 12 factor apps
 - MySQL DSN
 - PostgreSQL DSN
 - Redis DSN
+- FTP and SFTP DSN
 
 ### Installing
 `composer require andreyors/dsn`
@@ -41,11 +42,11 @@ return [
     ],
     'environments' => [
         'local' => [
-            'adapter' => $dsn['adapter'] ?? '',
-            'host' => $dsn['host'] ?? '',
-            'username' => $dsn['user'] ?? '',
-            'password' => $dsn['pass'] ?? '',
-            'db_name' => $dsn['name'] ?? '',
+            'adapter' => $dsn['adapter'] ?: '',
+            'host' => $dsn['host'] ?: '',
+            'username' => $dsn['user'] ?: '',
+            'password' => $dsn['pass'] ?: '',
+            'db_name' => $dsn['name'] ?: '',
             'charset' => 'utf8mb4',
         ],
     ],

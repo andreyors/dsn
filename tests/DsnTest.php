@@ -28,6 +28,12 @@ class DsnTest extends \PHPUnit_Framework_TestCase
             'empty dsn' => [
                 $dsn = '',
                 $expected = [
+                    'adapter' => null,
+                    'user' => null,
+                    'pass' => null,
+                    'host' => null,
+                    'port' => null,
+                    'name' => null,
                 ],
             ],
             'mysql with host only' => [
@@ -85,6 +91,28 @@ class DsnTest extends \PHPUnit_Framework_TestCase
                     'duration' => '1',
                 ],
             ],
+            'ftp' => [
+                $dsn = 'ftp://user:pass@1.1.1.1/folder',
+                $expected = [
+                    'adapter' => 'ftp',
+                    'user' => 'user',
+                    'pass' => 'pass',
+                    'host' => '1.1.1.1',
+                    'name' => 'folder',
+                    'port' => '21',
+                ],
+            ],
+            'sftp' => [
+                $dsn = 'sftp://user:pass@9.9.9.9/secure_folder',
+                $expected = [
+                    'adapter' => 'sftp',
+                    'user' => 'user',
+                    'pass' => 'pass',
+                    'host' => '9.9.9.9',
+                    'name' => 'secure_folder',
+                    'port' => '22',
+                ],
+            ]
         ];
     }
 }
