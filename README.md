@@ -1,4 +1,4 @@
-# dsn
+# dsn (data source name)
 
 [![Latest Stable Version](https://poser.pugx.org/andreyors/dsn/v/stable)](https://packagist.org/packages/andreyors/dsn)
 [![Build Status](https://travis-ci.org/andreyors/dsn.svg?branch=master)](https://travis-ci.org/andreyors/dsn)
