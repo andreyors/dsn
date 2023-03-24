@@ -1,7 +1,7 @@
 {
   "name": "andreyors/dsn",
   "type": "library",
-  "description": "DSN Parser",
+  "description": "DSN (Data Source Name) Parser",
   "keywords": ["dsn", "parser", "dsn parser", "12 factor app"],
   "license": "MIT",
   "autoload": {
